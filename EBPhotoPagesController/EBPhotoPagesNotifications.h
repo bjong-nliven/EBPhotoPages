@@ -52,6 +52,7 @@ static NSString *EBPhotoViewSingleTapNotification = @"PhotoViewDidRecognizeSingl
 static NSString *EBPhotoViewDoubleTapNotification = @"PhotoViewDidRecognizeDoubleTapNotification";
 static NSString *EBPhotoViewTouchDidEndNotification = @"PhotoViewWasTouchedNotification";
 static NSString *EBPhotoViewLongPressNotification = @"PhotoViewDidRecognizeLongPressNotification";
+static NSString *EBPhotoViewSwipeDownNotification = @"PhotoViewSwipeDownNotification";
 #pragma unused(EBPhotoViewSingleTapNotification)
 #pragma unused(EBPhotoViewDoubleTapNotification)
 #pragma unused(EBPhotoViewTouchDidEndNotification)

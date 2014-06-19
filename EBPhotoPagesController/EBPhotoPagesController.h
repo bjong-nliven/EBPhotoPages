@@ -69,6 +69,7 @@
 
 - (void)dismiss;
 
+- (void)setBrowsingModeEnabled:(BOOL)enabled;
 - (void)setInterfaceHidden:(BOOL)hidden; //private
 - (void)setUpperBarAlpha:(CGFloat)alpha;
 - (void)setCaptionAlpha:(CGFloat)alpha;

@@ -60,6 +60,8 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 @end
 
+BOOL browsingAllowed = YES;
+
 #pragma mark -
 #pragma mark - EBPhotoPagesController
 
@@ -527,6 +529,10 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 - (void)beginObservations
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didSwipeDownOnPhotoWithNotification:)
+                                                 name:EBPhotoViewSwipeDownNotification
+                                               object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didEndSingleTouchOnPhotoWithNotification:)
@@ -681,6 +687,10 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 #pragma mark - Setters
 
+- (void)setBrowsingModeEnabled:(BOOL)enabled
+{
+    browsingAllowed = enabled;
+}
 
 - (void)setStatusBarDisabled:(BOOL)disabled withAnimation:(BOOL)animated
 {
@@ -1044,6 +1054,11 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 #pragma mark - Event Hooks
 
+- (void)didSwipeDownOnPhotoWithNotification:(NSNotification *)aNotification
+{
+    [self dismiss];
+}
+
 - (void)didEndSingleTouchOnPhotoWithNotification:(NSNotification *)aNotification
 {
     EBPhotoView *photoView = aNotification.object;
@@ -1072,6 +1087,8 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
                    shouldHandleSingleTapGesture:singleTap
                                 forPhotoAtIndex:self.currentPhotoIndex] : YES;
   
+    respondToSingleTap = respondToSingleTap && browsingAllowed;
+    
     if(respondToSingleTap){
         [self.currentState photoPagesController:self
                             didReceiveSingleTap:singleTap

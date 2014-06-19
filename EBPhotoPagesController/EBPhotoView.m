@@ -188,6 +188,11 @@ static NSString *ImageKeyPath = @"image";
     [self addGestureRecognizer:longPressGesture];
     
     [singleTapRecognizer requireGestureRecognizerToFail:doubleTapGesture];
+    
+    UISwipeGestureRecognizer* swipeDownGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didRecognizeSwipeDown:)];
+    swipeDownGestureRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    
+    [self addGestureRecognizer:swipeDownGestureRecognizer];
 }
 
 #pragma mark - Event Hooks
@@ -269,6 +274,12 @@ static NSString *ImageKeyPath = @"image";
                                                               userInfo:touchInfo];
         }
     }
+}
+
+- (void)didRecognizeSwipeDown:(id)sender
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:EBPhotoViewSwipeDownNotification
+                                                        object:self];
 }
 
 #pragma mark - Setters

@@ -5,46 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B3DAB4E9-8259-40BD-9A9B-D25A124BB5C8</string>
+	<string>D6C7939D-EC50-4F47-A3D3-A3C5B3BF9587</string>
 	<key>IDESourceControlProjectName</key>
 	<string>EBPhotoPagesControllerDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C49B8D97-0840-4E8C-9152-E989C9CB6CB6</key>
-		<string>https://github.com/EddyBorja/markovator.git</string>
-		<key>DDEB2F61-97E5-4C53-B7D6-BB1D7EB39610</key>
-		<string>https://github.com/EddyBorja/EBPhotoPages.git</string>
+		<key>60DB8308-058D-42BC-9E3A-1BEBF72BD505</key>
+		<string>https://github.com/bjong-nliven/EBPhotoPages.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>EBPhotoPages/EBPhotoPagesControllerDemo.xcodeproj/project.xcworkspace</string>
+	<string>EBPhotoPagesControllerDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C49B8D97-0840-4E8C-9152-E989C9CB6CB6</key>
-		<string>../../..</string>
-		<key>DDEB2F61-97E5-4C53-B7D6-BB1D7EB39610</key>
+		<key>60DB8308-058D-42BC-9E3A-1BEBF72BD505</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/EddyBorja/EBPhotoPages.git</string>
+	<string>https://github.com/bjong-nliven/EBPhotoPages.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C49B8D97-0840-4E8C-9152-E989C9CB6CB6</string>
+	<string>60DB8308-058D-42BC-9E3A-1BEBF72BD505</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C49B8D97-0840-4E8C-9152-E989C9CB6CB6</string>
-			<key>IDESourceControlWCCName</key>
-			<string>CodeProjects</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DDEB2F61-97E5-4C53-B7D6-BB1D7EB39610</string>
+			<string>60DB8308-058D-42BC-9E3A-1BEBF72BD505</string>
 			<key>IDESourceControlWCCName</key>
 			<string>EBPhotoPages</string>
 		</dict>
