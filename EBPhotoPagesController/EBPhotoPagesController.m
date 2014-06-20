@@ -34,6 +34,7 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 
 @property (strong) NSDictionary *actionSheetTargetInfo; //info about the object the action sheet is currently handling
 @property (assign) BOOL originalStatusBarVisibility;
+@property (assign) BOOL browseModeAlwaysShown;
 
 @property (nonatomic, strong) UIBarButtonItem *doneBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *cancelBarButtonItem;
@@ -59,8 +60,6 @@ static NSString *kActionSheetIndexKey= @"actionSheetTargetIndex";
 @property (assign) NSInteger currentPhotoIndex;
 
 @end
-
-BOOL browsingAllowed = YES;
 
 #pragma mark -
 #pragma mark - EBPhotoPagesController
@@ -144,6 +143,7 @@ BOOL browsingAllowed = YES;
     [self loadPhotoPagesFactory];
     [self loadOperationsQueue];
     [self setCommentsHidden:YES];
+    [self setBrowseModeAlwaysShown:NO];
 }
 
 - (void)dealloc
@@ -687,9 +687,9 @@ BOOL browsingAllowed = YES;
 
 #pragma mark - Setters
 
-- (void)setBrowsingModeEnabled:(BOOL)enabled
+- (void)setBrowsingAlwaysShown:(BOOL)enabled
 {
-    browsingAllowed = enabled;
+    self.browseModeAlwaysShown = enabled;
 }
 
 - (void)setStatusBarDisabled:(BOOL)disabled withAnimation:(BOOL)animated
@@ -1087,7 +1087,7 @@ BOOL browsingAllowed = YES;
                    shouldHandleSingleTapGesture:singleTap
                                 forPhotoAtIndex:self.currentPhotoIndex] : YES;
   
-    respondToSingleTap = respondToSingleTap && browsingAllowed;
+    respondToSingleTap = respondToSingleTap && !self.browseModeAlwaysShown;
     
     if(respondToSingleTap){
         [self.currentState photoPagesController:self
